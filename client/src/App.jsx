@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   fetchMonths, 
   fetchMonthDetail, 
+  updateMonth,
   updateMonthCustom, 
   fetchBankDetails, 
   updateBankDetails 
@@ -22,7 +23,6 @@ export function App() {
   const [currentMonthId, setCurrentMonthId] = useState(null);
   const [currentMonthData, setCurrentMonthData] = useState(null);
   const [customData, setCustomData] = useState(null);
-  const [analysis, setAnalysis] = useState(null);
   const [bankDetails, setBankDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -68,7 +68,7 @@ export function App() {
       }
     } catch (err) {
       console.error(err);
-      setError('Não foi possível carregar os dados. Verifique se o servidor está ativo.');
+      setError('Não foi possível carregar os dados.');
     } finally {
       setLoading(false);
     }
@@ -79,7 +79,6 @@ export function App() {
       const res = await fetchMonthDetail(id);
       setCurrentMonthData(res.month);
       setCustomData(res.customData);
-      setAnalysis(res.analysis);
       setCurrentMonthId(id);
     } catch (err) {
       console.error(err);
@@ -91,6 +90,7 @@ export function App() {
     loadMonthDetail(id);
   };
 
+  // Toggle Payment Status
   const handleToggleStatus = async (statusKey) => {
     if (!currentMonthId || !customData) return;
     const currentStatus = customData.paymentStatus || {};
@@ -99,7 +99,6 @@ export function App() {
       [statusKey]: !currentStatus[statusKey],
     };
 
-    // Optimistic update
     setCustomData({
       ...customData,
       paymentStatus: newStatus,
@@ -109,11 +108,9 @@ export function App() {
       await updateMonthCustom(currentMonthId, {
         paymentStatus: newStatus,
       });
-      // Update in months summary too
       setMonths(months.map(m => m.id === currentMonthId ? { ...m, paymentStatus: newStatus } : m));
     } catch (err) {
       console.error(err);
-      // Revert on error
       setCustomData({
         ...customData,
         paymentStatus: currentStatus,
@@ -121,10 +118,58 @@ export function App() {
     }
   };
 
+  // Save Services (Values, VTOs, names, added/deleted services)
+  const handleSaveServices = async (updatedServices) => {
+    if (!currentMonthData) return;
+    const updatedMonth = {
+      ...currentMonthData,
+      services: updatedServices,
+    };
+    const saved = await updateMonth(updatedMonth);
+    setCurrentMonthData(saved);
+    // Refresh month in summary
+    const updatedMonths = await fetchMonths();
+    setMonths(updatedMonths);
+  };
+
+  // Save Rent (Total USD, Rafael USD, Isabella USD, Otávio USD)
+  const handleSaveRent = async (updatedRent) => {
+    if (!currentMonthData) return;
+    const updatedMonth = {
+      ...currentMonthData,
+      rent: updatedRent,
+    };
+    const saved = await updateMonth(updatedMonth);
+    setCurrentMonthData(saved);
+    const updatedMonths = await fetchMonths();
+    setMonths(updatedMonths);
+  };
+
+  // Save Official Global Rates for Month
+  const handleSaveOfficialRates = async ({ dollarBlue, brlRate }) => {
+    if (!currentMonthData) return;
+    const updatedMonth = {
+      ...currentMonthData,
+      rates: {
+        ...currentMonthData.rates,
+        dollarBlue: parseFloat(dollarBlue) || currentMonthData.rates.dollarBlue,
+        brlRate: parseFloat(brlRate) || currentMonthData.rates.brlRate,
+      }
+    };
+    const saved = await updateMonth(updatedMonth);
+    setCurrentMonthData(saved);
+    // Clear simulated custom rates since official was changed
+    setCustomDollar(null);
+    setCustomBrlRate(null);
+    localStorage.removeItem('rep_custom_dollar');
+    localStorage.removeItem('rep_custom_brl');
+    const updatedMonths = await fetchMonths();
+    setMonths(updatedMonths);
+  };
+
   const handleSaveCustomDiagnosis = async (id, payload) => {
     const res = await updateMonthCustom(id, payload);
     setCustomData(res.customData);
-    // Reload details to refresh analysis insights
     await loadMonthDetail(id);
   };
 
@@ -157,14 +202,15 @@ export function App() {
     localStorage.removeItem('rep_custom_brl');
   };
 
-  const handleUploadSuccess = async (newMonth) => {
-    await loadInitial();
+  const handleMonthCreated = async (newMonth) => {
+    const updatedMonths = await fetchMonths();
+    setMonths(updatedMonths);
     if (newMonth && newMonth.id) {
+      setCurrentMonthId(newMonth.id);
       await loadMonthDetail(newMonth.id);
     }
   };
 
-  // Active rates (simulated or official)
   const officialDollar = currentMonthData?.rates?.dollarBlue || 1500;
   const officialBrlRate = currentMonthData?.rates?.brlRate || 300;
   const activeDollar = customDollar || officialDollar;
@@ -189,7 +235,7 @@ export function App() {
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4">
         <div className="bg-slate-900 border border-slate-800 p-6 rounded-2xl max-w-md text-center">
           <AlertCircle className="w-10 h-10 text-rose-500 mx-auto mb-3" />
-          <h2 className="text-lg font-bold text-white mb-2">Erro de Conexão</h2>
+          <h2 className="text-lg font-bold text-white mb-2">Erro de Carregamento</h2>
           <p className="text-xs text-slate-400 mb-4">{error}</p>
           <button
             onClick={loadInitial}
@@ -219,7 +265,7 @@ export function App() {
         onCurrencyChange={handleCurrencyChange}
       />
 
-      {/* 2. Personalized Currency Simulator Bar (Collapsible or always easily accessible) */}
+      {/* 2. Personalized Currency Simulator & Official Rate Editor */}
       {ratesOpen && (
         <RatesBar
           officialDollar={officialDollar}
@@ -229,6 +275,7 @@ export function App() {
           onCustomDollarChange={handleCustomDollarChange}
           onCustomBrlRateChange={handleCustomBrlRateChange}
           onResetRates={handleResetRates}
+          onSaveAsOfficial={handleSaveOfficialRates}
           currency={currency}
           onCurrencyChange={handleCurrencyChange}
         />
@@ -273,12 +320,13 @@ export function App() {
           </div>
         </div>
 
-        {/* 4. ALUGUEL (USD) - SEPARADO DAS CONTAS */}
+        {/* 4. ALUGUEL (USD) - SEPARADO DAS CONTAS & EDITÁVEL */}
         <RentCard
           rent={currentMonthData?.rent}
           dollarRate={activeDollar}
           paymentStatus={customData?.paymentStatus}
           onToggleStatus={handleToggleStatus}
+          onSaveRent={handleSaveRent}
         />
 
         {/* 5. ACERTOS DAS CONTAS (SERVIÇOS) - 3 CARTÕES */}
@@ -293,13 +341,14 @@ export function App() {
           brlRate={activeBrlRate}
         />
 
-        {/* 6. TABELA DETALHADA DE CONTAS E SERVIÇOS */}
+        {/* 6. TABELA DETALHADA DE CONTAS E SERVIÇOS & EDITÁVEL */}
         <ServicesTable
           services={currentMonthData?.services}
           totals={currentMonthData?.totals}
           currency={currency}
           dollarRate={activeDollar}
           brlRate={activeBrlRate}
+          onSaveServices={handleSaveServices}
         />
 
       </main>
@@ -313,7 +362,7 @@ export function App() {
       <DiagnosisModal
         isOpen={diagnosisOpen}
         onClose={() => setDiagnosisOpen(false)}
-        analysis={analysis}
+        analysis={null}
         customData={customData}
         monthId={currentMonthId}
         monthName={currentMonthData?.name}
@@ -330,7 +379,8 @@ export function App() {
       <UploadModal
         isOpen={uploadOpen}
         onClose={() => setUploadOpen(false)}
-        onUploadSuccess={handleUploadSuccess}
+        onMonthCreated={handleMonthCreated}
+        onResetComplete={loadInitial}
       />
 
     </div>

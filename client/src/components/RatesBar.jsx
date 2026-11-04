@@ -1,5 +1,5 @@
-import React from 'react';
-import { DollarSign, ArrowRightLeft, RotateCcw, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { DollarSign, ArrowRightLeft, RotateCcw, Sparkles, Save, Check } from 'lucide-react';
 
 export function RatesBar({
   officialDollar,
@@ -9,12 +9,24 @@ export function RatesBar({
   onCustomDollarChange,
   onCustomBrlRateChange,
   onResetRates,
+  onSaveAsOfficial,
   currency,
   onCurrencyChange,
 }) {
+  const [savedSuccess, setSavedSuccess] = useState(false);
+
   const isCustomActive = 
     (customDollar && customDollar !== officialDollar) || 
     (customBrlRate && customBrlRate !== officialBrlRate);
+
+  const handleSaveOfficial = () => {
+    onSaveAsOfficial({
+      dollarBlue: customDollar || officialDollar,
+      brlRate: customBrlRate || officialBrlRate,
+    });
+    setSavedSuccess(true);
+    setTimeout(() => setSavedSuccess(false), 2000);
+  };
 
   return (
     <div className="bg-slate-900/90 border-b border-indigo-500/20 px-4 py-3 sm:px-6">
@@ -26,9 +38,9 @@ export function RatesBar({
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <span className="font-semibold text-white">Simulador de Cotação Pessoal</span>
+            <span className="font-semibold text-white">Cotações do Mês & Simulador Pessoal</span>
             <p className="text-[11px] text-slate-400">
-              Ajuste as cotações que você pagou para converter todas as contas da tela em tempo real.
+              Altere para simular valores ou salve como a nova cotação global do mês.
             </p>
           </div>
         </div>
@@ -50,11 +62,6 @@ export function RatesBar({
                 placeholder={officialDollar ? officialDollar.toString() : '1500'}
               />
             </div>
-            {officialDollar && (
-              <span className="text-[10px] text-slate-500 border-l border-slate-800 pl-2">
-                Padrão: ${officialDollar}
-              </span>
-            )}
           </div>
 
           {/* BRL / ARS Rate */}
@@ -72,12 +79,19 @@ export function RatesBar({
                 placeholder={officialBrlRate ? officialBrlRate.toString() : '300'}
               />
             </div>
-            {officialBrlRate && (
-              <span className="text-[10px] text-slate-500 border-l border-slate-800 pl-2">
-                Padrão: {officialBrlRate}
-              </span>
-            )}
           </div>
+
+          {/* Action to Save as Official Global Rate */}
+          {isCustomActive && (
+            <button
+              onClick={handleSaveOfficial}
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow transition-all"
+              title="Salvar estas cotações como as oficiais definitivas deste mês"
+            >
+              {savedSuccess ? <Check className="w-3.5 h-3.5 text-emerald-300" /> : <Save className="w-3.5 h-3.5" />}
+              <span>{savedSuccess ? 'Cotação Salva!' : 'Salvar no Mês'}</span>
+            </button>
+          )}
 
           {/* Reset button if custom */}
           {isCustomActive && (
