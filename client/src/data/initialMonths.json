@@ -1,0 +1,1201 @@
+[
+  {
+    "id": "janeiro-26",
+    "name": "Janeiro 2026",
+    "year": 2026,
+    "monthIndex": 1,
+    "filename": "CONTAS REP - Janeiro_26.csv",
+    "rent": {
+      "label": "ALQUILER (800)",
+      "totalUsd": 800,
+      "totalArs": 1164000,
+      "rafaelArs": 376845,
+      "isabellaArs": 376845,
+      "otavioArs": 410310,
+      "rafaelUsd": 259,
+      "isabellaUsd": 259,
+      "otavioUsd": 282
+    },
+    "services": [
+      {
+        "vto": "10/01",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 41889.34,
+        "rafael": 13963.11,
+        "isabella": 13963.11,
+        "otavio": 13963.11,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "12/01",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 185748.66,
+        "rafael": 61916.22,
+        "isabella": 61916.22,
+        "otavio": 61916.22,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "14/01",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 34912.57,
+        "rafael": 11637.52,
+        "isabella": 11637.52,
+        "otavio": 11637.52,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "16/01",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 34638.6,
+        "rafael": 11546.2,
+        "isabella": 11546.2,
+        "otavio": 11546.2,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "26/01",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 83093.31,
+        "rafael": 27697.77,
+        "isabella": 27697.77,
+        "otavio": 27697.77,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "15/01",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 26062.66,
+        "rafael": 8687.55,
+        "isabella": 8687.55,
+        "otavio": 8687.55,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 406345.14,
+      "totalArs": 1570345.14,
+      "totalBrl": 5710.35,
+      "otavioPaidServices": 227638,
+      "isaPaidServices": 178707.13999999998
+    },
+    "rates": {
+      "dollarBlue": 1455,
+      "brlRate": 275
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 75879.33333333333,
+        "toIsa": 59569.04666666666,
+        "totalBills": 135448.38,
+        "rentUsd": 259
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 16310.286666666667,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 75879.33333333333,
+      "grossIsaPaidPerPerson": 59569.04666666666,
+      "isabellaRentUsd": 259,
+      "otavioRentUsd": 282
+    }
+  },
+  {
+    "id": "fevereiro-26",
+    "name": "Fevereiro 2026",
+    "year": 2026,
+    "monthIndex": 2,
+    "filename": "CONTAS REP - Fevereiro_26.csv",
+    "rent": {
+      "label": "ALQUILER (800)",
+      "totalUsd": 800,
+      "totalArs": 1136000,
+      "rafaelArs": 367780,
+      "isabellaArs": 367780,
+      "otavioArs": 400440,
+      "rafaelUsd": 259,
+      "isabellaUsd": 259,
+      "otavioUsd": 282
+    },
+    "services": [
+      {
+        "vto": "10/02",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 47651.01,
+        "rafael": 15883.67,
+        "isabella": 15883.67,
+        "otavio": 15883.67,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "12/02",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 200812.97,
+        "rafael": 66937.66,
+        "isabella": 66937.66,
+        "otavio": 66937.66,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "13/02",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 35468.48,
+        "rafael": 11822.83,
+        "isabella": 11822.83,
+        "otavio": 11822.83,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "16/02",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 34638.6,
+        "rafael": 11546.2,
+        "isabella": 11546.2,
+        "otavio": 11546.2,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "19/02",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 31102.06,
+        "rafael": 10367.35,
+        "isabella": 10367.35,
+        "otavio": 10367.35,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "20/02",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 26729.91,
+        "rafael": 8909.97,
+        "isabella": 8909.97,
+        "otavio": 8909.97,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 376403.03,
+      "totalArs": 1512403.03,
+      "totalBrl": 5499.65,
+      "otavioPaidServices": 248463.98,
+      "isaPaidServices": 127939.05
+    },
+    "rates": {
+      "dollarBlue": 1420,
+      "brlRate": 275
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 82821.32666666668,
+        "toIsa": 42646.35,
+        "totalBills": 125467.67666666667,
+        "rentUsd": 259
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 40174.97666666668,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 82821.32666666668,
+      "grossIsaPaidPerPerson": 42646.35,
+      "isabellaRentUsd": 259,
+      "otavioRentUsd": 282
+    }
+  },
+  {
+    "id": "março-26",
+    "name": "Março 2026",
+    "year": 2026,
+    "monthIndex": 3,
+    "filename": "CONTAS REP - Março_26.csv",
+    "rent": {
+      "label": "ALQUILER (800)",
+      "totalUsd": 800,
+      "totalArs": 1136000,
+      "rafaelArs": 367780,
+      "isabellaArs": 367780,
+      "otavioArs": 400440,
+      "rafaelUsd": 259,
+      "isabellaUsd": 259,
+      "otavioUsd": 282
+    },
+    "services": [
+      {
+        "vto": "10/03",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 49964.44,
+        "rafael": 16654.81,
+        "isabella": 16654.81,
+        "otavio": 16654.81,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/03",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 204596.11,
+        "rafael": 68198.7,
+        "isabella": 68198.7,
+        "otavio": 68198.7,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "31/03",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 41304.85,
+        "rafael": 13768.28,
+        "isabella": 13768.28,
+        "otavio": 13768.28,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "16/03",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 40927.5,
+        "rafael": 13642.5,
+        "isabella": 13642.5,
+        "otavio": 13642.5,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "17/03",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 36549.37,
+        "rafael": 12183.12,
+        "isabella": 12183.12,
+        "otavio": 12183.12,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "19/03",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 27799.09,
+        "rafael": 9266.36,
+        "isabella": 9266.36,
+        "otavio": 9266.36,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 401141.36,
+      "totalArs": 1537141.36,
+      "totalBrl": 5630.55,
+      "otavioPaidServices": 254560.55,
+      "isaPaidServices": 146580.81
+    },
+    "rates": {
+      "dollarBlue": 1420,
+      "brlRate": 273
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 84853.51666666666,
+        "toIsa": 48860.27,
+        "totalBills": 133713.78666666665,
+        "rentUsd": 259
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 35993.246666666666,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 84853.51666666666,
+      "grossIsaPaidPerPerson": 48860.27,
+      "isabellaRentUsd": 259,
+      "otavioRentUsd": 282
+    }
+  },
+  {
+    "id": "abril-26",
+    "name": "Abril 2026",
+    "year": 2026,
+    "monthIndex": 4,
+    "filename": "CONTAS REP - Abril_26.csv",
+    "rent": {
+      "label": "ALQUILER (800)",
+      "totalUsd": 800,
+      "totalArs": 1120000,
+      "rafaelArs": 362600,
+      "isabellaArs": 362600,
+      "otavioArs": 394800,
+      "rafaelUsd": 259,
+      "isabellaUsd": 259,
+      "otavioUsd": 282
+    },
+    "services": [
+      {
+        "vto": "09/04",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 28429.38,
+        "rafael": 9476.46,
+        "isabella": 9476.46,
+        "otavio": 9476.46,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/04",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 280540,
+        "rafael": 93513.33,
+        "isabella": 93513.33,
+        "otavio": 93513.33,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "21/04",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 36671.73,
+        "rafael": 12223.91,
+        "isabella": 12223.91,
+        "otavio": 12223.91,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "18/04",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 31511.82,
+        "rafael": 10503.94,
+        "isabella": 10503.94,
+        "otavio": 10503.94,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 57236.08,
+        "rafael": 19078.69,
+        "isabella": 19078.69,
+        "otavio": 19078.69,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "23/04",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 31409.28,
+        "rafael": 10469.76,
+        "isabella": 10469.76,
+        "otavio": 10469.76,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 465798.29,
+      "totalArs": 1585798.29,
+      "totalBrl": 5663.57,
+      "otavioPaidServices": 308969.38,
+      "isaPaidServices": 156828.91
+    },
+    "rates": {
+      "dollarBlue": 1400,
+      "brlRate": 280
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 102989.79333333333,
+        "toIsa": 52276.30333333334,
+        "totalBills": 155266.09666666668,
+        "rentUsd": 259
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 50713.49,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 102989.79333333333,
+      "grossIsaPaidPerPerson": 52276.30333333334,
+      "isabellaRentUsd": 259,
+      "otavioRentUsd": 282
+    }
+  },
+  {
+    "id": "maio-26",
+    "name": "Maio 2026",
+    "year": 2026,
+    "monthIndex": 5,
+    "filename": "CONTAS REP - Maio_26.csv",
+    "rent": {
+      "label": "ALQUILER (900?)",
+      "totalUsd": 900,
+      "totalArs": 1278000,
+      "rafaelArs": 414640,
+      "isabellaArs": 414640,
+      "otavioArs": 448720,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "11/05",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 30048.65,
+        "rafael": 10016.22,
+        "isabella": 10016.22,
+        "otavio": 10016.22,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "11/05",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 252635.11,
+        "rafael": 84211.7,
+        "isabella": 84211.7,
+        "otavio": 84211.7,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "14/05",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 37380.33,
+        "rafael": 12460.11,
+        "isabella": 12460.11,
+        "otavio": 12460.11,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "14/05",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 43243.38,
+        "rafael": 14414.46,
+        "isabella": 14414.46,
+        "otavio": 14414.46,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "15/05",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 65485.55,
+        "rafael": 21828.52,
+        "isabella": 21828.52,
+        "otavio": 21828.52,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "22/05",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 32447.89,
+        "rafael": 10815.96,
+        "isabella": 10815.96,
+        "otavio": 10815.96,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 461240.91,
+      "totalArs": 1739240.91,
+      "totalBrl": 5997.38,
+      "otavioPaidServices": 282683.76,
+      "isaPaidServices": 178557.15000000002
+    },
+    "rates": {
+      "dollarBlue": 1420,
+      "brlRate": 290
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 94227.92,
+        "toIsa": 59519.05000000001,
+        "totalBills": 153746.97,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 34708.86999999999,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 94227.92,
+      "grossIsaPaidPerPerson": 59519.05000000001,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  },
+  {
+    "id": "junho-26",
+    "name": "Junho 2026",
+    "year": 2026,
+    "monthIndex": 6,
+    "filename": "CONTAS REP - Junho_26.csv",
+    "rent": {
+      "label": "ALQUILER (900?)",
+      "totalUsd": 900,
+      "totalArs": 1318500,
+      "rafaelArs": 427780,
+      "isabellaArs": 427780,
+      "otavioArs": 462940,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 31881.53,
+        "rafael": 10627.18,
+        "isabella": 10627.18,
+        "otavio": 10627.18,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 245491,
+        "rafael": 81830.33,
+        "isabella": 81830.33,
+        "otavio": 81830.33,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 43303.59,
+        "rafael": 14434.53,
+        "isabella": 14434.53,
+        "otavio": 14434.53,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 42572.71,
+        "rafael": 14190.9,
+        "isabella": 14190.9,
+        "otavio": 14190.9,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 74305.3,
+        "rafael": 24768.43,
+        "isabella": 24768.43,
+        "otavio": 24768.43,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 32627.06,
+        "rafael": 10875.69,
+        "isabella": 10875.69,
+        "otavio": 10875.69,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 470181.19,
+      "totalArs": 1788681.19,
+      "totalBrl": 6276.07,
+      "otavioPaidServices": 277372.53,
+      "isaPaidServices": 192808.65999999997
+    },
+    "rates": {
+      "dollarBlue": 1465,
+      "brlRate": 285
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 92457.51000000001,
+        "toIsa": 64269.55333333332,
+        "totalBills": 156727.06333333332,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 28187.956666666687,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 92457.51000000001,
+      "grossIsaPaidPerPerson": 64269.55333333332,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  },
+  {
+    "id": "julho-26",
+    "name": "Julho 2026",
+    "year": 2026,
+    "monthIndex": 7,
+    "filename": "CONTAS REP - Julho_26.csv",
+    "rent": {
+      "label": "ALQUILER 900usd",
+      "totalUsd": 900,
+      "totalArs": 1354500,
+      "rafaelArs": 439460,
+      "isabellaArs": 439460,
+      "otavioArs": 475580,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "10/07",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 33202.11,
+        "rafael": 11067.37,
+        "isabella": 11067.37,
+        "otavio": 11067.37,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/07",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 269932.11,
+        "rafael": 89977.37,
+        "isabella": 89977.37,
+        "otavio": 89977.37,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 38939.66,
+        "rafael": 12979.89,
+        "isabella": 12979.89,
+        "otavio": 12979.89,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 63399.38,
+        "rafael": 21133.13,
+        "isabella": 21133.13,
+        "otavio": 21133.13,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 107372.94,
+        "rafael": 35790.98,
+        "isabella": 35790.98,
+        "otavio": 35790.98,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 33709.77,
+        "rafael": 11236.59,
+        "isabella": 11236.59,
+        "otavio": 11236.59,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 546555.97,
+      "totalArs": 1901055.97,
+      "totalBrl": 6555.37,
+      "otavioPaidServices": 303134.22,
+      "isaPaidServices": 243421.75
+    },
+    "rates": {
+      "dollarBlue": 1505,
+      "brlRate": 290
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 101044.73999999999,
+        "toIsa": 81140.58333333333,
+        "totalBills": 182185.3233333333,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 19904.156666666662,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 101044.73999999999,
+      "grossIsaPaidPerPerson": 81140.58333333333,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  },
+  {
+    "id": "agosto-26",
+    "name": "Agosto 2026",
+    "year": 2026,
+    "monthIndex": 8,
+    "filename": "CONTAS REP - Agosto_26.csv",
+    "rent": {
+      "label": "ALQUILER 900usd",
+      "totalUsd": 900,
+      "totalArs": 1363500,
+      "rafaelArs": 442380,
+      "isabellaArs": 442380,
+      "otavioArs": 478740,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "10/08",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 40186.44,
+        "rafael": 13395.48,
+        "isabella": 13395.48,
+        "otavio": 13395.48,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/08",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 332368.21,
+        "rafael": 110789.4,
+        "isabella": 110789.4,
+        "otavio": 110789.4,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "14/08",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 45120.14,
+        "rafael": 15040.05,
+        "isabella": 15040.05,
+        "otavio": 15040.05,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "12/08",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 45546.86,
+        "rafael": 15182.29,
+        "isabella": 15182.29,
+        "otavio": 15182.29,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "13/08",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 85575.71,
+        "rafael": 28525.24,
+        "isabella": 28525.24,
+        "otavio": 28525.24,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "21/08",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 33117.91,
+        "rafael": 11039.3,
+        "isabella": 11039.3,
+        "otavio": 11039.3,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 581915.27,
+      "totalArs": 1945415.27,
+      "totalBrl": 6572.35,
+      "otavioPaidServices": 372554.65,
+      "isaPaidServices": 209360.62000000002
+    },
+    "rates": {
+      "dollarBlue": 1515,
+      "brlRate": 296
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 124184.88333333335,
+        "toIsa": 69786.87333333334,
+        "totalBills": 193971.75666666668,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 54398.01000000001,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 124184.88333333335,
+      "grossIsaPaidPerPerson": 69786.87333333334,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  },
+  {
+    "id": "setembro-26",
+    "name": "Setembro 2026",
+    "year": 2026,
+    "monthIndex": 9,
+    "filename": "CONTAS REP - Setembro_26.csv",
+    "rent": {
+      "label": "ALQUILER 900usd",
+      "totalUsd": 900,
+      "totalArs": 1381500,
+      "rafaelArs": 448220,
+      "isabellaArs": 448220,
+      "otavioArs": 485060,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "10/08",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 41819.18,
+        "rafael": 13939.73,
+        "isabella": 13939.73,
+        "otavio": 13939.73,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/09",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 297242,
+        "rafael": 99080.67,
+        "isabella": 99080.67,
+        "otavio": 99080.67,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "14/09",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 40577.65,
+        "rafael": 13525.88,
+        "isabella": 13525.88,
+        "otavio": 13525.88,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "16/09",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 46011.28,
+        "rafael": 15337.09,
+        "isabella": 15337.09,
+        "otavio": 15337.09,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "14/09",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 80362.02,
+        "rafael": 26787.34,
+        "isabella": 26787.34,
+        "otavio": 26787.34,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "17/09",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 35048.25,
+        "rafael": 11682.75,
+        "isabella": 11682.75,
+        "otavio": 11682.75,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 541060.38,
+      "totalArs": 1922560.38,
+      "totalBrl": 6495.14,
+      "otavioPaidServices": 339061.18,
+      "isaPaidServices": 201999.2
+    },
+    "rates": {
+      "dollarBlue": 1535,
+      "brlRate": 296
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 113020.39333333333,
+        "toIsa": 67333.06666666667,
+        "totalBills": 180353.46,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 45687.32666666666,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 113020.39333333333,
+      "grossIsaPaidPerPerson": 67333.06666666667,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  },
+  {
+    "id": "outubro-26",
+    "name": "Outubro 2026",
+    "year": 2026,
+    "monthIndex": 10,
+    "filename": "CONTAS REP - Outubro_26.csv",
+    "rent": {
+      "label": "ALQUILER 900usd",
+      "totalUsd": 900,
+      "totalArs": 1381500,
+      "rafaelArs": 448220,
+      "isabellaArs": 448220,
+      "otavioArs": 485060,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "10/10",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 43811.87,
+        "rafael": 14603.96,
+        "isabella": 14603.96,
+        "otavio": 14603.96,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/10",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 341871.11,
+        "rafael": 113957.04,
+        "isabella": 113957.04,
+        "otavio": 113957.04,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "14/10",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 42292.95,
+        "rafael": 14097.65,
+        "isabella": 14097.65,
+        "otavio": 14097.65,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "14/10",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 44812.29,
+        "rafael": 14937.43,
+        "isabella": 14937.43,
+        "otavio": 14937.43,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "14/10",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 83715.63,
+        "rafael": 27905.21,
+        "isabella": 27905.21,
+        "otavio": 27905.21,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "17/10",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 36690.86,
+        "rafael": 12230.29,
+        "isabella": 12230.29,
+        "otavio": 12230.29,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 593194.71,
+      "totalArs": 1974694.71,
+      "totalBrl": 6474.41,
+      "otavioPaidServices": 385682.98,
+      "isaPaidServices": 207511.72999999998
+    },
+    "rates": {
+      "dollarBlue": 1535,
+      "brlRate": 305
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 128560.99333333333,
+        "toIsa": 69170.57666666666,
+        "totalBills": 197731.57,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 59390.41666666667,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 128560.99333333333,
+      "grossIsaPaidPerPerson": 69170.57666666666,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  },
+  {
+    "id": "novembro-26",
+    "name": "Novembro 2026",
+    "year": 2026,
+    "monthIndex": 11,
+    "filename": "CONTAS REP - Novembro_26.csv",
+    "rent": {
+      "label": "ALQUILER 900usd",
+      "totalUsd": 900,
+      "totalArs": 1413000,
+      "rafaelArs": 458440,
+      "isabellaArs": 458440,
+      "otavioArs": 496120,
+      "rafaelUsd": 292,
+      "isabellaUsd": 292,
+      "otavioUsd": 316
+    },
+    "services": [
+      {
+        "vto": "10/10",
+        "service": "INTERNET",
+        "name": "INTERNET",
+        "total": 45531.17,
+        "rafael": 15177.06,
+        "isabella": 15177.06,
+        "otavio": 15177.06,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "10/10",
+        "service": "EXPENSAS",
+        "name": "EXPENSAS",
+        "total": 348703.11,
+        "rafael": 116234.37,
+        "isabella": 116234.37,
+        "otavio": 116234.37,
+        "payer": "OTAVIO"
+      },
+      {
+        "vto": "13/11",
+        "service": "ABL",
+        "name": "ABL",
+        "total": 41958.95,
+        "rafael": 13986.32,
+        "isabella": 13986.32,
+        "otavio": 13986.32,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "16/11",
+        "service": "GAS",
+        "name": "GAS",
+        "total": 47706.81,
+        "rafael": 15902.27,
+        "isabella": 15902.27,
+        "otavio": 15902.27,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "17/11",
+        "service": "LUZ",
+        "name": "LUZ",
+        "total": 133484.17,
+        "rafael": 44494.72,
+        "isabella": 44494.72,
+        "otavio": 44494.72,
+        "payer": "ISABELLA"
+      },
+      {
+        "vto": "19/11",
+        "service": "AYSA",
+        "name": "AYSA",
+        "total": 37058.33,
+        "rafael": 12352.78,
+        "isabella": 12352.78,
+        "otavio": 12352.78,
+        "payer": "ISABELLA"
+      }
+    ],
+    "totals": {
+      "totalCuentasArs": 654442.54,
+      "totalArs": 2067442.54,
+      "totalBrl": 6891.48,
+      "otavioPaidServices": 394234.27999999997,
+      "isaPaidServices": 260208.26
+    },
+    "rates": {
+      "dollarBlue": 1570,
+      "brlRate": 300
+    },
+    "settlement": {
+      "rafael": {
+        "toOtavio": 131411.42666666667,
+        "toIsa": 86736.08666666667,
+        "totalBills": 218147.51333333334,
+        "rentUsd": 292
+      },
+      "netOtavioIsa": {
+        "from": "ISABELLA",
+        "to": "OTAVIO",
+        "amount": 44675.34,
+        "reason": "Otávio adiantou mais em serviços que Isa"
+      },
+      "grossOtavioPaidPerPerson": 131411.42666666667,
+      "grossIsaPaidPerPerson": 86736.08666666667,
+      "isabellaRentUsd": 292,
+      "otavioRentUsd": 316
+    }
+  }
+]
