@@ -9,14 +9,14 @@ import {
 } from './api';
 import { Navbar } from './components/Navbar';
 import { RatesBar } from './components/RatesBar';
-import { RentCard } from './components/RentCard';
-import { SettlementCards } from './components/SettlementCards';
+import { UnifiedPersonCard } from './components/UnifiedPersonCard';
+import { RentEditModal } from './components/RentEditModal';
 import { ServicesTable } from './components/ServicesTable';
 import { DiagnosisModal } from './components/DiagnosisModal';
 import { BankModal } from './components/BankModal';
 import { UploadModal } from './components/UploadModal';
 import { formatCurrency, convertAmount } from './utils/formatters';
-import { Sparkles, Calendar, ChevronLeft, ChevronRight, AlertCircle, RefreshCw } from 'lucide-react';
+import { Users, Home, ChevronLeft, ChevronRight, AlertCircle, RefreshCw, Settings2 } from 'lucide-react';
 
 export function App() {
   const [months, setMonths] = useState([]);
@@ -40,6 +40,7 @@ export function App() {
   });
 
   // Modals
+  const [rentEditOpen, setRentEditOpen] = useState(false);
   const [diagnosisOpen, setDiagnosisOpen] = useState(false);
   const [bankOpen, setBankOpen] = useState(false);
   const [uploadOpen, setUploadOpen] = useState(false);
@@ -61,7 +62,6 @@ export function App() {
       setBankDetails(banks);
 
       if (monthsList.length > 0) {
-        // Default to latest month
         const latest = monthsList[monthsList.length - 1];
         setCurrentMonthId(latest.id);
         await loadMonthDetail(latest.id);
@@ -118,7 +118,7 @@ export function App() {
     }
   };
 
-  // Save Services (Values, VTOs, names, added/deleted services)
+  // Save Services (values, VTOs, names, added/removed)
   const handleSaveServices = async (updatedServices) => {
     if (!currentMonthData) return;
     const updatedMonth = {
@@ -127,12 +127,11 @@ export function App() {
     };
     const saved = await updateMonth(updatedMonth);
     setCurrentMonthData(saved);
-    // Refresh month in summary
     const updatedMonths = await fetchMonths();
     setMonths(updatedMonths);
   };
 
-  // Save Rent (Total USD, Rafael USD, Isabella USD, Otávio USD)
+  // Save Rent (total USD & room distribution)
   const handleSaveRent = async (updatedRent) => {
     if (!currentMonthData) return;
     const updatedMonth = {
@@ -145,7 +144,7 @@ export function App() {
     setMonths(updatedMonths);
   };
 
-  // Save Official Global Rates for Month
+  // Save Global Official Rates for Month
   const handleSaveOfficialRates = async ({ dollarBlue, brlRate }) => {
     if (!currentMonthData) return;
     const updatedMonth = {
@@ -158,7 +157,6 @@ export function App() {
     };
     const saved = await updateMonth(updatedMonth);
     setCurrentMonthData(saved);
-    // Clear simulated custom rates since official was changed
     setCustomDollar(null);
     setCustomBrlRate(null);
     localStorage.removeItem('rep_custom_dollar');
@@ -216,7 +214,16 @@ export function App() {
   const activeDollar = customDollar || officialDollar;
   const activeBrlRate = customBrlRate || officialBrlRate;
 
-  // Navigation between months
+  // Bills share per person (1/3 of total accounts)
+  const billsPerPersonArs = (currentMonthData?.totals?.totalCuentasArs || 0) / 3;
+
+  // Rent amounts per person
+  const rent = currentMonthData?.rent || {};
+  const rafaelRentUsd = rent.rafaelUsd || (rent.totalUsd >= 900 ? 292 : 259);
+  const isabellaRentUsd = rent.isabellaUsd || (rent.totalUsd >= 900 ? 292 : 259);
+  const otavioRentUsd = rent.otavioUsd || (rent.totalUsd >= 900 ? 316 : 282);
+
+  // Month navigation
   const currentIndex = months.findIndex(m => m.id === currentMonthId);
   const prevMonth = currentIndex > 0 ? months[currentIndex - 1] : null;
   const nextMonth = currentIndex < months.length - 1 ? months[currentIndex + 1] : null;
@@ -282,7 +289,7 @@ export function App() {
       )}
 
       {/* 3. Main Dashboard Body */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-7">
         
         {/* Month Header Banner */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-800/60">
@@ -320,28 +327,84 @@ export function App() {
           </div>
         </div>
 
-        {/* 4. ALUGUEL (USD) - SEPARADO DAS CONTAS & EDITÁVEL */}
-        <RentCard
-          rent={currentMonthData?.rent}
-          dollarRate={activeDollar}
-          paymentStatus={customData?.paymentStatus}
-          onToggleStatus={handleToggleStatus}
-          onSaveRent={handleSaveRent}
-        />
+        {/* 4. OS 3 CARTÕES PADRONIZADOS (RAFAEL, ISABELLA, OTÁVIO) */}
+        <div>
+          {/* Section Sub-header */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-indigo-400" />
+              <h2 className="text-base font-bold text-white tracking-tight uppercase">
+                Fechamento por Morador (Aluguel + Contas)
+              </h2>
+            </div>
 
-        {/* 5. ACERTOS DAS CONTAS (SERVIÇOS) - 3 CARTÕES */}
-        <SettlementCards
-          settlement={currentMonthData?.settlement}
-          totals={currentMonthData?.totals}
-          bankDetails={bankDetails}
-          paymentStatus={customData?.paymentStatus}
-          onToggleStatus={handleToggleStatus}
-          currency={currency}
-          dollarRate={activeDollar}
-          brlRate={activeBrlRate}
-        />
+            <button
+              onClick={() => setRentEditOpen(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-800 transition-all"
+            >
+              <Settings2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Editar Aluguel & Quartos</span>
+            </button>
+          </div>
 
-        {/* 6. TABELA DETALHADA DE CONTAS E SERVIÇOS & EDITÁVEL */}
+          {/* Grid of 3 standardized cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            
+            {/* RAFAEL */}
+            <UnifiedPersonCard
+              personKey="rafael"
+              name="Rafael"
+              roomLabel="Quarto Standard"
+              rentUsd={rafaelRentUsd}
+              billsArs={billsPerPersonArs}
+              currency={currency}
+              dollarRate={activeDollar}
+              brlRate={activeBrlRate}
+              bankDetails={bankDetails}
+              settlement={currentMonthData?.settlement}
+              totals={currentMonthData?.totals}
+              paymentStatus={customData?.paymentStatus}
+              onToggleStatus={handleToggleStatus}
+            />
+
+            {/* ISABELLA */}
+            <UnifiedPersonCard
+              personKey="isabella"
+              name="Isabella"
+              roomLabel="Quarto Standard"
+              rentUsd={isabellaRentUsd}
+              billsArs={billsPerPersonArs}
+              currency={currency}
+              dollarRate={activeDollar}
+              brlRate={activeBrlRate}
+              bankDetails={bankDetails}
+              settlement={currentMonthData?.settlement}
+              totals={currentMonthData?.totals}
+              paymentStatus={customData?.paymentStatus}
+              onToggleStatus={handleToggleStatus}
+            />
+
+            {/* OTÁVIO */}
+            <UnifiedPersonCard
+              personKey="otavio"
+              name="Otávio"
+              roomLabel="Quarto Principal"
+              rentUsd={otavioRentUsd}
+              billsArs={billsPerPersonArs}
+              currency={currency}
+              dollarRate={activeDollar}
+              brlRate={activeBrlRate}
+              bankDetails={bankDetails}
+              settlement={currentMonthData?.settlement}
+              totals={currentMonthData?.totals}
+              paymentStatus={customData?.paymentStatus}
+              onToggleStatus={handleToggleStatus}
+            />
+
+          </div>
+        </div>
+
+        {/* 5. TABELA DETALHADA DE CONTAS E SERVIÇOS (COM BOTÃO DE EDITAR) */}
         <ServicesTable
           services={currentMonthData?.services}
           totals={currentMonthData?.totals}
@@ -359,6 +422,13 @@ export function App() {
       </footer>
 
       {/* Modals */}
+      <RentEditModal
+        isOpen={rentEditOpen}
+        onClose={() => setRentEditOpen(false)}
+        rent={currentMonthData?.rent}
+        onSaveRent={handleSaveRent}
+      />
+
       <DiagnosisModal
         isOpen={diagnosisOpen}
         onClose={() => setDiagnosisOpen(false)}
